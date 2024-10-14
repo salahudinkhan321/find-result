@@ -13,7 +13,7 @@ const Form = () => {
         e.preventDefault();
         await axios({
             method: 'post',
-            url: '/api/student/result',
+            url: `${import.meta.env.VITE_BACKEND_URI}}/api/student/result`,
             data: data,
             withCredentials: true
         }).then((response) => {
