@@ -11,9 +11,12 @@ const Form = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        console.log("hello")
+        const urlApi = `${import.meta.env.VITE_BACKEND_URI}/api/student/result`
+        console.log("this is urls",urlApi)
         await axios({
             method: 'post',
-            url: `${import.meta.env.VITE_BACKEND_URI}}/api/student/result`,
+            url: urlApi,
             data: data,
             withCredentials: true
         }).then((response) => {
@@ -35,6 +38,7 @@ const Form = () => {
 
     return (
         <section class="text-gray-400 bg-gray-900 body-font h-screen">
+            <h1>{import.meta.env.VITE_BACKEND_URI}</h1>
             <div class="container mx-auto flex flex-col items-center justify-center h-full px-5 py-24">
 
                 {/* Right Form Section */}
